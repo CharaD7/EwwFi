@@ -1,6 +1,8 @@
 # EwwFi 🌐
 
-![EwwFi Logo](assets/ewwfi.png)
+<p align="center">
+  <img src="assets/ewwfi.png" alt="EwwFi Logo" width="300"/>
+</p>
 
 **EwwFi** is a sleek, animated Wi-Fi widget built with [Eww](https://github.com/elkowar/eww), styled using the [Catppuccin Mocha](https://github.com/catppuccin/catppuccin) palette. It mimics the functionality of `iwgtk`, offering a minimalist interface for managing Wi-Fi connections via `iwd`.
 
