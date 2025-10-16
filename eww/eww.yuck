@@ -1,0 +1,41 @@
+(defwidget wifiWidget []
+  (box :orientation "v" :class "wifi-box"
+    (label :text "Wi-Fi Networks" :class "title")
+    (label :text "Connected to: ${current}" :class "status")
+    (box :orientation "v"
+      (for net in networks
+        (button :text net :class "net-btn"
+          :onclick "eww update selected_ssid='{net}' && eww open passwordPopup"
+        )
+      )
+    )
+    (button :text "Disconnect" :onclick "iwctl station wlan0 disconnect" :class "disconnect-btn")
+  )
+)
+
+(defwidget passwordPopup []
+  (box :orientation "v" :class "popup"
+    (label :text "Enter password for ${selected_ssid}" :class "popup-title")
+    (entry :placeholder "Password" :onchange "eww update wifi_password={}" :class "popup-entry")
+    (button :text "Connect"
+      :onclick "scripts/connect.sh ${selected_ssid} ${wifi_password}"
+      :class "popup-btn"
+    )
+    (button :text "Cancel" :onclick "eww close passwordPopup" :class "popup-cancel")
+  )
+)
+
+(defwindow wifiWindow
+  (geometry :x "50%" :y "50%" :width "400px" :height "500px" :anchor "center")
+  :stacking "fg"
+  :transition "zoom"
+  :widget wifiWidget
+)
+
+(defwindow passwordPopup
+  (geometry :x "50%" :y "50%" :width "300px" :height "200px" :anchor "center")
+  :stacking "fg"
+  :transition "popup"
+  :widget passwordPopup
+)
+

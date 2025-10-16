@@ -1,0 +1,95 @@
+$mocha-bg: #1e1e2e;
+$mocha-text: #cdd6f4;
+$mocha-accent: #89b4fa;
+$mocha-green: #a6e3a1;
+$mocha-red: #f38ba8;
+
+.wifi-box {
+  background-color: $mocha-bg;
+  color: $mocha-text;
+  border-radius: 12px;
+  padding: 20px;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: $mocha-accent;
+  margin-bottom: 10px;
+}
+
+.status {
+  color: $mocha-green;
+  margin-bottom: 15px;
+}
+
+.net-btn {
+  background-color: #313244;
+  color: $mocha-text;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 5px 0;
+  transition: all 0.2s ease;
+}
+
+.net-btn:hover {
+  background-color: #45475a;
+  transform: scale(1.05);
+}
+
+.disconnect-btn {
+  background-color: $mocha-red;
+  color: $mocha-bg;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.popup {
+  background-color: $mocha-bg;
+  color: $mocha-text;
+  border-radius: 10px;
+  padding: 15px;
+  animation: popupZoom 0.3s ease-out;
+}
+
+.popup-title {
+  font-weight: bold;
+  color: $mocha-accent;
+  margin-bottom: 10px;
+}
+
+.popup-entry {
+  background-color: #313244;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.popup-btn {
+  background-color: $mocha-green;
+  color: $mocha-bg;
+  padding: 8px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.popup-cancel {
+  background-color: $mocha-red;
+  color: $mocha-bg;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popupZoom {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
